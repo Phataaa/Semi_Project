@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('quanity');
             $table->string('brand');
             $table->string('color');
+            $table->string('gender');
             $table->integer('category_id')->unsigned();
             $table->foreign('category_id')->references('id')->on('category');
             $table->integer('user_id')->nullable()->unsigned();
@@ -35,6 +36,6 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('product');
     }
 };
